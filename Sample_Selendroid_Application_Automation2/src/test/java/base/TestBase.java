@@ -17,7 +17,7 @@ import utilities.Common_Utilities;
  * Also after the test suit execution we are closing the driver*/
 public class TestBase extends TestReports{
 	
-	public  AppiumDriver driver;
+	public static AppiumDriver driver;
 	public static Selendroid_DashboardScreen dashBoard;
 	public static Selendroid_RegisterUser_confirmationScreen confirmUser;
 	public static Selendroid_RegisterUserScreen registerUser;
@@ -27,8 +27,7 @@ public class TestBase extends TestReports{
     //public static Logger log= Logger.getLogger("devpinoyLogger");
 	
 	
-	
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	public void setup() throws IOException{
 		//properties, desired capabilities
 		

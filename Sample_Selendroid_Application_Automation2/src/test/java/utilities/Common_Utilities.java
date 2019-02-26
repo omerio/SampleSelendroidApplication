@@ -117,7 +117,7 @@ public static void Androidcapabilities(){
 	cap.setCapability("noReset", true);
 	cap.setCapability("fullreset", false);
 	cap.setCapability("NewCommandTimeOut", 60);
-	cap.setCapability("app", "Users/kdas/Documents/workspace/Sample_Selendroid_Application_Automation2/src/test/java/selendroid-test-app-0.17.0.apk");
+	cap.setCapability("app", "/Users/omerio/mdlwar/code/interviews/bluesquare/SampleSelendroidApplication/Sample_Selendroid_Application_Automation2/src/test/java/selendroid-test-app-0.17.0.apk");
 	//cap.setCapability("app", "Users/kdas/Documents/workspace/Ebay_Android_Application_Automation/src/test/java/Flipkart.apk");
 		
 }

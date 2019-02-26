@@ -23,7 +23,7 @@ import utilities.Common_Utilities;
 
 /* This class we are using for the writing the test script only through method invocations*/
 @Listeners(GenerateReport.class)
-public class SampleSelendroidTestSuits extends TestBase {
+public class SampleSelendroidTest extends TestBase {
 	
 	
 	
