@@ -19,22 +19,16 @@ import screens_pageobject.Selendroid_RegisterUserScreen;
 import screens_pageobject.Selendroid_RegisterUser_confirmationScreen;
 import utilities.Common_Utilities;
 
-
-
 /* This class we are using for the writing the test script only through method invocations*/
 @Listeners(GenerateReport.class)
 public class SampleSelendroidTest extends TestBase {
-	
-	
-	
+
 	@BeforeTest
 	public void init() throws InterruptedException, IOException{
 		
 		dashBoard= new Selendroid_DashboardScreen(driver);
 		confirmUser= new Selendroid_RegisterUser_confirmationScreen(driver);
 		registerUser= new Selendroid_RegisterUserScreen(driver);
-				
-			
 	}
 	
 	@Test
@@ -78,8 +72,6 @@ public class SampleSelendroidTest extends TestBase {
 		Thread.sleep(4000);
 		confirmUser.confirmUserRegistration("test001Userregistration");
 		Thread.sleep(2000);
-		
-			
 	}
 	
 	@Test
@@ -92,10 +84,10 @@ public class SampleSelendroidTest extends TestBase {
 		System.out.println("Welcome again to Dashboard");
 		Thread.sleep(5000);
 		driver.navigate().back();
-		Thread.sleep(8000);
+		Thread.sleep(2000);
 		driver.navigate().back();
-		
-		
+		Thread.sleep(2000);
+		driver.navigate().back();
 	}
 
 	@Test
@@ -108,7 +100,7 @@ public class SampleSelendroidTest extends TestBase {
 		//Alert alt = driver.switchTo().alert();
 		//alt.dismiss();
 		TouchAction action = new TouchAction(driver);
-		action.tap(PointOption.point(722, 1392)).perform();
+		action.tap(PointOption.point(546, 921)).perform();
 		Thread.sleep(2000);
 		
 		//driver.navigate().ba
@@ -120,14 +112,5 @@ public class SampleSelendroidTest extends TestBase {
 		test = extent.createTest("test004EndActivity");
 		Thread.sleep(3000);
 		dashBoard.endactivityForUser("test004EndActivity");
-		
-	}	
-	
-	
-	
-
-	
-
-	
-	
+	}
 }
