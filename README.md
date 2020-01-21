@@ -1,54 +1,73 @@
 # SampleSelendroidApplication
 
-Below are the points I want to mention as important points:
-1. I have gone through the app and figured out 4 basic Scenarios which I tried to execute  - As Sanity Test
+## Getting Started
 
-Test Case: RegisterUser
-a) Invoke the app
-b) Click on the User option.
-c) verify the user details screen Header.
-d) Entered user details.
-e) Clicked on Register User.
-f) Navigated to Confirm User register Screen
-g) Clicked on the Confirmed user Register Button.
+Going through the app, four basic scenarios came out to be important to be executed as sanity tests.
 
-Test Case: Progress bar 
-a) Navigate back to the DashBorad Screen.
-b) Clicked on Progress Bar button.
-c) Verify the Waiting Dialog.
-d) Navigate Back to Dash Board.
+### Test Cases
 
-Test Case: Pop-Up Window
-a) Tap on the Pop-Up window button.
-b) Dismiss pop-up appeared.
-c) Clicked on Dismiss button.[Tried with Alert, but finally was able to do with Pixel]
-d)Back to Dash Board.
+- RegisterUser  
+  a) Invoke the app.  
+  b) Click on the User option.  
+  c) verify the user details screen Header.  
+  d) Entered user details.  
+  e) Clicked on Register User.  
+  f) Navigated to Confirm User register Screen.  
+  g) Clicked on the Confirmed user Register Button.
 
-Test Case: Finsih Activity
-a) Verify EndActivity button.
-b) Click on the button.
+- Progress bar  
+  a) Navigate back to the DashBorad Screen.  
+  b) Clicked on Progress Bar button.  
+  c) Verify the Waiting Dialog.  
+  d) Navigate Back to Dash Board.
 
---------
-Project flow:
-I have used Page Object Model for this framework.
-For all the page Objects I am creating new classes and defining those Page Objects.I am initializing those objects through Page Factory.
-For the Functions like Button click, Text I have created generic Methods which I am using all over the project , 
-Component is the Package I am using for that.
-I have created a generic Assert class to do all kinds of assertions.
-Log4J I have Used to Get the Logs.
-Extent Report Manager I have used to generate the Reports.
-All Dependencies are mentioned in the POM.xml.
-----------------------------------------------------
+- Pop-Up Window  
+  a) Tap on the Pop-Up window button.  
+  b) Dismiss pop-up appeared.  
+  c) Clicked on Dismiss button.[Tried with Alert, but finally was able to do with Pixel]  
+  d)Back to Dash Board.
 
-For iOS also I have set the capabilities But for iOS no APK was available. If APk is available only thing we need to do is set the desired 
-capabilities in the Appium Inspector and find out the Page object locations, and mention those in the page Object classes where I have commented the 
-ios elements.
+- Finsih Activity  
+  a) Verify EndActivity button.  
+  b) Click on the button.
 
---------------
-For Android I have Used UIAutomator.
----------------------------------
+---
 
-To Run the project from Terminal below are the steps:
-cd your project location then enter.
-Now write > mvn test
+## Project Flow
 
+1- For this framework, `Page Object Model` is used.  
+2- For every page object, new classes are created and Page Objects are defined.  
+3- Objects are initialized through `Page Factory`.  
+4- This project uses `Generic Methods` found in the `Component` folder.  
+5- For assertions, this project uses `Generic Assert Classes`.  
+6- For logging, `Log4J` is used.  
+7- `Extent Report Manager` is used to generate reports.  
+8- All Dependencies used can be found in the POM.xml.
+
+---
+
+## Setup
+
+Before running the tests, you need to modify two files:
+
+1- Open `Test.properties` Found in `src/test/java/properties` and modify the `Android` or `iOS` config based on your emulator or device you want to use.  
+2- Open `Common_Utilities.java` Found in `src/test/java/utilities` and modify the `Androidcapabilities`, set the `app` capability to your current project directory: `/Users/<username>/<some_directory>/SampleSelendroidApplication/Sample_Selendroid_Application_Automation2/src/test/java/selendroid-test-app-0.17.0.apk`
+
+### Android
+
+- Clone the repo, run:
+
+```bash
+git clone https://github.com/omerio/SampleSelendroidApplication.git
+```
+
+- Open the project, navigate to `Sample_Selendroid_Application_Automation2` and run:
+
+```bash
+mvn test
+```
+
+### iOS
+
+Since no `.ipa` file is available for the test app, we can't run the tests on iOS.
+Once a similar test app is available, you need to set the desired capabilities respectively and inspect the elements using the `Appium Inspector` and update them in the object classes.
